@@ -19,6 +19,12 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Malayalam:wght@100..900&display=swap" rel="stylesheet">
+
+  <script type="module" src="js/app.js"></script>
 </head>
 
 <body>
@@ -26,8 +32,21 @@
   <!-- Add your site or application content here -->
   <a href="https://www.google.at" class="foyer"><div>Zum digitalen Foyer</div><i data-feather="arrow-right"></i></a>
   <h1>B:R:HR:NG</h1>
-  <div class="recording"><i data-feather="circle"></i><i data-feather="mic"></i></div>
-  <script src="js/app.js"></script>
+  <div class="audio">
+    <div class="audio-controllers">
+      <audio id="audio-player" controls></audio>
+      <button class="upload" onclick="uploadAudio()">
+        <i data-feather="upload"></i>
+      </button>
+      <button class="delete">
+        <i data-feather="trash-2"></i>
+      </button>
+    </div>
+    <button class="recordingButton" onclick="recording()">
+      <i data-feather="circle"></i>
+      <i data-feather="mic"></i>
+    </button>
+  </div>
   <script src="node_modules/feather-icons/dist/feather.js"></script>
   <script>
     feather.replace();

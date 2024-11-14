@@ -22,6 +22,7 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
-    "feather-icons": "^4.29.2"
+    "feather-icons": "^4.29.2",
+    "firebase": "^11.0.2"
   }
 }
