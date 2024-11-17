@@ -4,7 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: 'production',output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.[contenthash].js',
+    clean: true,
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
