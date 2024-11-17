@@ -28,10 +28,7 @@
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
-  <a href="https://www.google.at" class="foyer"><div>Zum digitalen Foyer</div><i data-feather="arrow-right"></i></a>
-  <h1>B:R:HR:NG</h1>
+ <h1>B:R:HR:NG</h1>
   <div class="audio">
     <div class="audio-controllers">
       <audio id="audio-player" controls></audio>
@@ -46,6 +43,28 @@
       <i data-feather="circle"></i>
       <i data-feather="mic"></i>
     </button>
+  </div>
+
+  <div class="popup" id="introduction">
+      <h2>Herzlich Willkommen bei B:R:HR:NG - dem Labor für ersehnte Berührungen! Eine multimediale Performance, die utopische Berührungen visualisiert!</h2>
+
+      <p>Nach welcher Berührung sehnst du dich?
+      Mit wem, wo und wie findet sie statt? Beschreibe uns deine utopische Berührung.</p>
+
+      <p>Im Digitalen Foyer der ARGEkultur kannst du die Beschreibungen bereits gewünschter ersehnter Berührungen hören.</p>
+
+      <p>Beachte: Mit Absenden der Audioaufnahme willigst du ein, dass das Material für künstlerische Zwecke öffentlich verwendet werden darf!</p>
+      <button onclick="closePopup()">Schließen</button>
+  </div>
+
+  <div class="popup" id="outro">
+    <h2>Vielen Dank für die Beschreibung deiner ersehnten Berührung!</h2>
+    <p>Im Digitalen Foyer der ARGEkultur kannst du die
+      Beschreibungen bereits gewünschter utopischer Berührungen hören.
+    </p>
+
+    <a href="https://www.google.at"><div>Zum digitalen Foyer</div><i data-feather="arrow-right"></i></a>
+
   </div>
   <script src="node_modules/feather-icons/dist/feather.js"></script>
   <script>

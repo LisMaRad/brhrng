@@ -49,6 +49,7 @@ function stopRecording() {
   mediaRecorder.onstop = () => {
     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
     const audioUrl = URL.createObjectURL(audioBlob);
+    console.log(audioUrl);
     const audioPlayer = document.getElementById("audio-player");
     audioPlayer.src = audioUrl;
     audioPlayer.load(); // Ensure the audio element loads the new source
@@ -57,12 +58,19 @@ function stopRecording() {
 
 // Upload to Firebase
 function uploadAudio() {
-  const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-  const storageRef = ref(storage, `recordings/${Date.now()}.wav`);
-  uploadBytes(storageRef, audioBlob).then((snapshot) => {
-    console.log("Uploaded a blob!");
-  });
+  document.getElementById("outro").style.display = "block";
+
+  // const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+  // const storageRef = ref(storage, `recordings/${Date.now()}.wav`);
+  // uploadBytes(storageRef, audioBlob).then((snapshot) => {
+  //   console.log("Uploaded a blob!");
+  // });
+}
+
+function closePopup() {
+  document.getElementById("introduction").style.display = "none";
 }
 
 window.recording = recording;
 window.uploadAudio = uploadAudio;
+window.closePopup = closePopup;
