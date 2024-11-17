@@ -37,6 +37,7 @@ export function recording() {
 
 // Start recording
 async function startRecording() {
+  document.getElementById("recordingButton").style.color = "green";
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   mediaRecorder = new MediaRecorder(stream);
   mediaRecorder.ondataavailable = (event) => audioChunks.push(event.data);
@@ -45,6 +46,7 @@ async function startRecording() {
 
 // Stop recording and preview
 function stopRecording() {
+  document.getElementById("recordingButton").style.color = "inherit";
   mediaRecorder.stop();
   mediaRecorder.onstop = () => {
     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
