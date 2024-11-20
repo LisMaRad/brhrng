@@ -107,7 +107,7 @@ function App() {
           <p>Im Digitalen Foyer der ARGEkultur kannst du die
             Beschreibungen bereits gewünschter utopischer Berührungen hören.
           </p>
-          <a href="https://www.google.at">
+          <a href="https://hubs.xrspaces.de/64Ve3bB/raum1">
             <div>Zum digitalen Foyer</div>
             <FeatherIcon icon="arrow-right"></FeatherIcon>
           </a>
