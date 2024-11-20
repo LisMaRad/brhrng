@@ -22,7 +22,7 @@ const UploadComponent = ({file, setShowEndPopUp } : UploadComponentProps) => {
 
   return (
   <button className="upload" onClick={() => {
-    setShowEndPopUp(true)}}>
+    handleUpload().then(() => setShowEndPopUp(true));}}>
         <FeatherIcon icon="upload"></FeatherIcon>
       </button>
   );
