@@ -1,39 +1,76 @@
 :root {
   --primary-color: #1c1c1c;
   --secondary-color: #d3d5da;
-  --font-size-desktop: 24px;
-  --font-size-mobile: 20px;
-  --icon-size-desktop: 24px;
-  --icon-size-mobile: 20px;
-  --h1-font-size-desktop: 64px;
-  --h1-font-size-mobile: 32px;
+  --font-size-xlarge: 48px;
+  --font-size-large: 32px;
+  --font-size-medium: 24px;
+  --font-size-small: 20px;
+  --icon-size-xlarge: 64px;
+  --icon-size-large: 48px;
+  --icon-size-medium: 24px;
+  --icon-size-small: 20px;
+  --h1-font-size-xlarge: 186px;
+  --h1-font-size-large: 128px;
+  --h1-font-size-medium: 64px;
+  --h1-font-size-small: 32px;
   --font-family: 'Cardo';
+  --recording-icon-small: 60px;
+  --recording-icon-medium: 84px;
+  --recording-icon-large: 124px;
+  --recording-icon-xlarge: 152px;
 }
 
 * {
   font-family: var(--font-family), serif;
-
 }
 
 body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-size: var(--font-size-mobile);
+  font-size: var(--font-size-small);
   margin: 0;
   padding: 0;
 
   @media (min-width: 768px) {
-    font-size: var(--font-size-desktop);
+    font-size: var(--font-size-medium);
+  }
+  @media (min-width: 992px) {
+    font-size: var(--font-size-large);
+  }
+  @media (min-width: 1200px) {
+    font-size: var(--font-size-xlarge);
   }
 }
 
 h1 {
-  font-size: var(--h1-font-size-mobile);
-  margin: 50px 20px;
+  font-size: var(--h1-font-size-small);
+  margin: 0 20px;
 
   @media (min-width: 768px) {
-    font-size: var(--h1-font-size-desktop);
-    margin: 30px 20px;
+    font-size: var(--h1-font-size-medium);
+  }
+  @media (min-width: 992px) {
+    font-size: var(--h1-font-size-large);
+  }
+  @media (min-width: 1200px) {
+    font-size: var(--h1-font-size-xlarge);
+  }
+}
+
+h2 {
+  margin: 0 auto;
+}
+
+.navigation {
+  padding: 10px 25px;
+  place-items: flex-end;
+  font-size: calc(var(--font-size-small) - 4px);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-size-medium) - 4px);
+  }
+  @media (min-width: 992px) {
+    font-size: calc(var(--font-size-large) - 4px);
   }
 }
 
@@ -61,12 +98,16 @@ a.foyer {
 }
 
 svg.feather {
-  width: var(--icon-size-mobile);
-  height: var(--icon-size-mobile);
+  width: var(--icon-size-small);
+  height: var(--icon-size-small);
 
   @media (min-width: 768px) {
-    width: var(--icon-size-desktop);
-    height: var(--icon-size-desktop);
+    width: var(--icon-size-medium);
+    height: var(--icon-size-medium);
+  }
+  @media (min-width: 992px) {
+    width: var(--icon-size-large);
+    height: var(--icon-size-large);
   }
 }
 
@@ -105,15 +146,33 @@ button {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
+      width: var(--recording-icon-small);
+      height: var(--recording-icon-small);
       stroke-width: 1px;
+
+      @media (min-width: 768px) {
+        width: var(--recording-icon-medium);
+        height: var(--recording-icon-medium);
+      }
+      @media (min-width: 992px) {
+        width: var(--recording-icon-large);
+        height: var(--recording-icon-large);
+      }
     }
 
     svg.feather-circle {
-      width: 120px;
-      height: 120px;
+      width: calc(var(--recording-icon-small) * 2);
+      height: calc(var(--recording-icon-small) * 2);
       stroke-width: 1px;
+
+      @media (min-width: 768px) {
+        width: calc(var(--recording-icon-medium) * 2);
+        height: calc(var(--recording-icon-medium) * 2);
+      }
+      @media (min-width: 992px) {
+        width: calc(var(--recording-icon-large) * 2);
+        height: calc(var(--recording-icon-large) * 2);
+      }
     }
   }
 }
@@ -129,23 +188,37 @@ button {
   border-radius: 25px;
   background-color: var(--primary-color);
   padding: 25px;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   @media (min-width: 768px) {
     padding: 50px;
+  }
+
+  .content {
+    flex-grow: 1;
+    overflow: scroll;
   }
 
   button {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border-radius: 15px;
-    padding: 10px;
-    font-size: calc(var(--font-size-mobile) - 2px);
+    padding: 10px 30px;
+    font-size: calc(var(--font-size-small) - 2px);
     margin-left: 50%;
     transform: translateX(-50%);
+    width: fit-content;
 
     @media (min-width: 768px) {
-      font-size: calc(var(--font-size-desktop) - 4px);
+      font-size: calc(var(--font-size-medium) - 4px);
+    }
+    @media (min-width: 992px) {
+      font-size: calc(var(--font-size-large) - 4px);
+    }
+    @media (min-width: 1200px) {
+      font-size: calc(var(--font-size-xlarge) - 4px);
     }
   }
 }

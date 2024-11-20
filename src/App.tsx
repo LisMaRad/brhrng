@@ -62,6 +62,12 @@ function App() {
 
   return (
     <>
+      <div className="navigation">
+        <a href="https://hubs.xrspaces.de/64Ve3bB/raum1">
+          <div>Zum digitalen Foyer</div>
+          <FeatherIcon icon="arrow-right"></FeatherIcon>
+        </a>
+      </div>
       <h1>B:R:HR:NG</h1>
       <div className="audio">
         {recordedBlob && <div className="audio-controllers">
@@ -86,6 +92,7 @@ function App() {
       </div>
       {showIntroPopUp && (
         <PopUp>
+          <div className="content">
           <h2>Herzlich Willkommen bei B:R:HR:NG - dem Labor für ersehnte Berührungen! Eine multimediale
             Performance, die utopische Berührungen visualisiert!
           </h2>
@@ -98,6 +105,7 @@ function App() {
           <p>Beachte: Mit Absenden der Audioaufnahme willigst du ein, dass das Material für künstlerische Zwecke
             öffentlich verwendet werden darf!
           </p>
+          </div>
           <button onClick={() => { setShowIntroPopUp(false); }}>Schließen</button>
         </PopUp>
       )}
